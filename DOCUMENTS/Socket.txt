@@ -1,0 +1,13 @@
+Explication des différentes Socket :
+
+	- TCP : Mode de communication connecté, le message est reçu en un seul bloc. Permet de gérer les protocoles simultanément les uns par rapport aux autres.
+		Crée un socket serveur qui crée deux socket lors de la connexion d'un client. Le serveur attend un message de la part d'un client et vérifie la provenance du message.
+		Plus structuré que les socket UDP.
+
+	- UDP : Mode non connecté, le message est reçu petit à petit. Les sockets UDP utilisent des Datagram pour communiquer entre le serveur et les clients. 
+		Permet de gérer les protocoles un par un.
+		Le serveur se attend un paquet de la part d'un client sans en vérifier la provenance.
+		Simple à programmer mais peu fiable étant donné que le serveur ne vérifie pas la source. N'envoie pas de tableau de byte, ce qui limite la taille des messages.
+
+	- Multicast UDP : Utilisation de Broadcast et de sous-groupes de clients dont les membres peuvent changer à tout moment. 
+			  Evite d'avoir à créer un certain nombre de coonnexions et d'envoyer un certain nombre de fois la même donnée à un certain nombre de machines différentes.
